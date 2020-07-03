@@ -13,7 +13,7 @@ const mdLinks = function (path, options) {
 
     //extrair as propriedades de cada link: url, text e path e guardar em um objeto
     const link = {
-      url: 'www.meulink',
+      url: 'www.meulink.com.br',
       text: 'Início do meu texto...',
       path
     }
