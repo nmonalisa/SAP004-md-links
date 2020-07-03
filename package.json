@@ -1,4 +1,25 @@
 {
   "name": "md-links",
-  "version": "0.1.0"
+  "version": "0.1.0",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "description": "Recuperar e validar links em arquivos markdown",
+  "main": "index.js",
+  "dependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "hhttps://github.com/nmonalisa/SAP004-md-links"
+  },
+  "keywords": [
+    "markdown",
+    "links",
+    "node.js",
+    "Laboratoria"
+  ],
+  "author": {
+    "name": "Nathalia Monalisa Francisco",
+    "email": "nathaliamonalisa@gmail.com"
+  },
+  "license": "ISC"
 }
