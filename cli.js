@@ -1,20 +1,24 @@
 // Arquivo que invoca e executa a função mdLinks passando os inputs do usuário como valores dos parâmetros
 const mdLinks = require('./index');
-
-const path = 'C://dir/.arquivo.md';
+const path = process.argv[2];
 const options = 'true';
 
 // Callback para sucesso da promisse
-const showLinks = function ({ url, text, path }) {
+const showLinks = function (linkList) {
   console.log(`
+  Arquivo lido com sucesso!
+  Total de links: ${linkList.length}`)
+  let i = 0
+  linkList.map(link => {
+    console.log(`
   -------------------------------
-  Aqruivo lido com sucesso
-  Meus links são:
-  Url: ${url}
-  Texto: ${text}
-  Caminho: ${path} 
-  --------------------------------
-`)
+  Link ${i+=1}
+  Url: ${link.url}
+  Texto: ${link.text}
+  Caminho: '${link.path}'
+  Status: "";
+  -------------------------------`)
+  })
 };
 
 // Callback para insucesso da promisse
@@ -23,9 +27,5 @@ const catchError = function (error) {
 }
 
 mdLinks(path, options)
-  .then((result) => {
-    showLinks(result)
-  })
-  .catch((error) =>
-    catchError(error)
-  );
+  .then(result => showLinks(result))
+  .catch(error => catchError(error));
