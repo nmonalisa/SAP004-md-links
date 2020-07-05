@@ -6,7 +6,9 @@
   },
   "description": "Recuperar e validar links em arquivos markdown",
   "main": "index.js",
-  "dependencies": {},
+  "dependencies": {
+    "axios": "^0.19.2"
+  },
   "repository": {
     "type": "git",
     "url": "hhttps://github.com/nmonalisa/SAP004-md-links"
