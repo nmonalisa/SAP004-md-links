@@ -1,39 +1,26 @@
 // Contém a função principal e genérica (mdLinks) que manipula arquivos.md em busca de links
 
-const readerFile = require('./reader')
+const fileContent = require('./reader');
+const regex = /(\[[^\s].*?\])(\(https?:+[^\s]+[\w/])\)/gm;
+
 
 const mdLinks = function (path, options) {
   return new Promise((resolve, reject) => {
-    console.log('caminho escolhido:', path);
-    console.log('opção escolhida:', options);
-
-    //ler o conteúdo do arquivo
-    readerFile(path)
+    fileContent(path)
       .then(text => {
-        console.log(text)
-          //extrair as propriedades de cada link: url, text e path e guardar em um objeto
-          //chamar função específica pra isso
-        const link = {
-            url: 'www.meulink.com.br',
-            text: text,
+        let linkList = [];
+        text.match(regex).map(item => {
+          const splitedContent = item.split('](');
+          linkList.push({
+            href: splitedContent[1].slice(0, -1),
+            text: splitedContent[0].slice(1).substr(0, 50),
             path
-          }
-          //fazer uma lista de todos os links (array de objetos)
-        const linkList = new Array;
-        linkList.push(link);
-
-        //Tratamento dos erros da promessa mdLinks
-        let erro = false
-        if (!erro) {
-          resolve(linkList);
-        } else {
-          reject('descrição do erro');
-        }
+          })
+        })
+        resolve(linkList);
       })
-      //Tratamento dos erros da promessa fileContent
-      .catch(error => console.log('Ocorreu um erro: diretório ou arquivo não encontrado'))
+      .catch(error => console.log('Ocorreu um erro: arquivo ou diretório não encontrado'))
   });
 };
 
-//exportar módulo
 module.exports = mdLinks;

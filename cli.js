@@ -13,11 +13,10 @@ const showLinks = function (linkList) {
     console.log(`
   -------------------------------
   Link ${i+=1}
-  Url: ${link.url}
-  Texto: ${link.text}
-  Caminho: '${link.path}'
-  Status: "";
-  -------------------------------`)
+  url: ${link.href}
+  descrição: ${link.text}
+  caminho: '${link.path}'
+  status: `)
   })
 };
 

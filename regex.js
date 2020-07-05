@@ -1,21 +1,22 @@
-const regex = /\[(.*)\][\<|\(](\bhttps?:\/\/\b.*)[\)|\>]/gm;
-const str = `ola..aqui esta um monte de link pra você testar!Boa sorte...
-[Este é o meu link!]<https://www2.google.com/ola/deucerto/>.E se tiver outro texto aqui não tem problema.
-[Link n°33-85](https://www.google.com9)
-[mais um link né?](https://www.goog22le.com)
-[isso é um link.](https://google.br)
-[Meu link.](https://www.google.com)
-e sei eu colocar oto texto aqui vai acontecer o que? https://www.google.br. Mas agora ele esta pegando tudo!`;
-let m;
+const regex = /(\[[^\s].*?\])(\(https?:+[^\s]+[\w/])\)/gm;
+// regex j = 
+const str = `
+## 5. Ferramentas utilizadas :wrench:
+* [Node.js](https://nodejs.org/en/) - plataforma de desenvolvimento.
+* [VSCode](https://code.visualstudio.com/) - editor de texto
+* [NPM](https://www.npmjs.com/) - gerenciador de pacotes
+* [Jest](https://jestjs.io/pt-BR/) - framework de testes unitários
+* [Figma](https://www.figma.com/) e [MarvelApp Maoihahaha](https://marvelapp.com/) - plataforma de prototipagem
+* [Trello](https://trello.com/pt-BR) - gerenciador de projeto
+`
 
-while ((m = regex.exec(str)) !== null) {
-  // This is necessary to avoid infinite loops with zero-width matches
-  if (m.index === regex.lastIndex) {
-    regex.lastIndex++;
-  }
 
-  // The result can be accessed through the `m`-variable.
-  m.forEach((match, groupIndex) => {
-    console.log(`Found match, group ${groupIndex}: ${match}`);
-  });
-}
+let linkList = [];
+str.match(regex).map(item => {
+  const splitedContent = item.split('](');
+  linkList.push({
+    href: splitedContent[1].slice(0, -1),
+    text: splitedContent[0].slice(1).substr(0, 50),
+  })
+})
+console.log(linkList)
