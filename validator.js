@@ -6,15 +6,13 @@ let meuLink = {
 };
 
 const validateLink = function (link) {
-  axios.get(link.href).
-  then(result => {
-      console.log(result.status)
+  axios.get(link.href)
+    .then(result => {
       result.status == 200 ? link.status = 'OK' : link.status = 'fail'
+      console.log(result.status)
       console.log(link)
     })
-    .catch(error => {
-      console.log('Não foi possível validar o link');
-    })
+    .catch(() => console.log('Não foi possível validar o link'));
 
 };
 validateLink(meuLink)

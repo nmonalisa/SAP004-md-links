@@ -1,7 +1,7 @@
 // Arquivo que invoca e executa a função mdLinks passando os inputs do usuário como valores dos parâmetros
 const mdLinks = require('./index');
 const path = process.argv[2];
-const options = 'true';
+const options = process.argv[3];
 
 // Callback para sucesso da promisse
 const showLinks = function (linkList) {

@@ -3,12 +3,14 @@
   "version": "0.1.0",
   "scripts": {
     "start": "node cli.js",
-    "test": "jest --coverage"
+    "test": "jest --coverage",
+    "eslint": "eslint --ext .js"
   },
   "description": "Recuperar e validar links em arquivos markdown",
   "main": "index.js",
   "dependencies": {
     "axios": "^0.19.2",
+    "eslint": "^7.4.0",
     "jest": "^26.1.0"
   },
   "repository": {
