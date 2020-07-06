@@ -2,12 +2,14 @@
   "name": "md-links",
   "version": "0.1.0",
   "scripts": {
-    "start": "node index.js"
+    "start": "node cli.js",
+    "test": "jest --coverage"
   },
   "description": "Recuperar e validar links em arquivos markdown",
   "main": "index.js",
   "dependencies": {
-    "axios": "^0.19.2"
+    "axios": "^0.19.2",
+    "jest": "^26.1.0"
   },
   "repository": {
     "type": "git",
