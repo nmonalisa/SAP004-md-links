@@ -4,7 +4,6 @@ const fileContent = require('./reader');
 const validateLink = require('./validator')
 const regex = /(\[[^\s].*?\])(\(https?:+[^\s]+[\w/])\)/gm;
 
-
 const mdLinks = function (path, options) {
   return new Promise((resolve, reject) => {
     fileContent(path)
@@ -22,7 +21,7 @@ const mdLinks = function (path, options) {
         if (options === '--validate') {
           validateLink(linkList)
             .then(result => resolve(result))
-            .catch((error) => console.log(error))
+            .catch((error) => console.log(error.toJSON()))
         } else {
           resolve(linkList);
         }

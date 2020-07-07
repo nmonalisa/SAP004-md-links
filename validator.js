@@ -1,32 +1,26 @@
 const axios = require('axios')
 
-// let meuLink = [{
-//     href: 'https://www.udemy.com/',
-//     text: 'Udemy',
-//     status: ''
-//   },
-//   {
-//     href: 'https://www.google.com/',
-//     text: 'Google',
-//     status: ''
-//   }
-// ];
+const mergeStatus = (links, status) => {
+  return links.map((link, index) => ({
+    ...link,
+    status: status[index]
+  }))
+}
 
 const validateLink = function (linklist) {
   return new Promise(resolve => {
-    linklist.map(link => {
-      axios.get(link.href)
+    const validate = linklist.map(link => {
+      return axios.get(link.href)
         .then(result => {
-          result.status === 200 ? link.status = 'OK' : link.status = 'fail'
-          console.log(link.status)
+          return result.status === 200 ? 'OK' : 'fail'
         })
-        .catch(() => console.log('Não foi possível validar este link no servidor'));
+        .catch(() => console.log('Não foi possível validar o link no servidor'));
     })
-    resolve(linklist)
+    Promise.all(validate)
+      .then(result => {
+        resolve(mergeStatus(linklist, result));
+      })
   })
 };
-
-// validateLink(meuLink).then(result => resolve(result)).catch((error) => console.log(error))
-
 
 module.exports = validateLink;
