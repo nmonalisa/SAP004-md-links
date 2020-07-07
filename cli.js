@@ -16,7 +16,7 @@ const showLinks = function (linkList) {
   url: ${link.href}
   descrição: ${link.text}
   caminho: '${link.path}'
-  status: `)
+  status: ${link.status}`)
   })
 };
 
