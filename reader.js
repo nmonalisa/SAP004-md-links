@@ -1,3 +1,8 @@
-// const fs = require('fs').promises;
-// const fileContent = path => fs.readFile(path, 'utf-8')
-// module.exports = fileContent
+const fs = require('fs').promises;
+
+const getFile = (path) => fs.readFile(path, 'utf-8', data => {
+  resolve(data);
+  reject('Não foi possível ler o seu arquivo.')
+});
+
+module.exports = getFile
