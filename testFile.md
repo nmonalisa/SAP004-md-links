@@ -4,4 +4,4 @@
 * [NPM](https://www.npmjs.com/) - gerenciador de pacotes
 * [Jest](https://jestjs.io/pt-BR/) - framework de testes unitários
 * [Figma](https://www.figma.com/) e [MarvelApp](https://marvelapp.com/) - plataforma de prototipagem
-* [Trello](https://trello.com/R) - gerenciador de projeto
+* [Trello](https://hauahuahahuha) - gerenciador de projeto

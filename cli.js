@@ -7,22 +7,19 @@ const options = process.argv[3];
 const showLinks = function (linkList) {
   console.log(`
   Arquivo lido com sucesso!
-  Total de links: ${linkList.length}`)
+  Total de links: ${linkList.length}
+  `)
   let i = 0
   linkList.map(link => {
-    console.log(`
-  -------------------------------
-  Link ${i+=1}
-  url: ${link.href}
-  descrição: ${link.text}
-  file: '${link.path}'
-  status: ${link.status}`)
+    console.log(
+      `Link ${i+=1}: ${link.file} ${link.href} ${link.status} ${link.text}
+  -------------------------------`)
   })
 };
 
 // Callback para insucesso da promisse
 const catchError = function (error) {
-  console.log(`Ocorreu um erro: ${error}`)
+  console.log(`Ocorreu um erro: ${error}`);
 }
 
 mdLinks(path, options)
