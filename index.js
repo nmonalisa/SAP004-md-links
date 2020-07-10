@@ -1,8 +1,7 @@
-const readFile = require('./file-reader');
-const validateLink = require('./validator');
-const extractMdLinks = require('./link-catcher');
-const getFileRoute = require('./setter-file-route');
-
+const readFile = require('./lib/file-reader');
+const validateLink = require('./lib/validator');
+const extractMdLinks = require('./lib/link-catcher');
+const getFileRoute = require('./lib/setter-file-route');
 
 const mdLinks = function (Inputedpath, options) {
   return new Promise((resolve) => {

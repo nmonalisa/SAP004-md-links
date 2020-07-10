@@ -1,15 +1,12 @@
 {
-  "name": "md-links",
-  "version": "1.0.0",
+  "name": "nmonalisa-md-links",
+  "version": "0.1.0",
+  "description": "Pacote para validar links em arquivos markdown",
+  "main": "index.js",
   "scripts": {
     "start": "node cli.js",
     "test": "jest --coverage",
     "eslint": "eslint cli.js ./lib --ext .js"
-  },
-  "description": "Pacote para validar links em arquivos markdown",
-  "main": "index.js",
-  "dependencies": {
-    "axios": "^0.19.2"
   },
   "repository": {
     "type": "git",
@@ -25,7 +22,14 @@
     "name": "Nathalia Monalisa Francisco",
     "email": "nathaliamonalisa@gmail.com"
   },
+  "bin": {
+    "md-links": "cli.js"
+  },
+  "homepage": "https://github.com/nmonalisa/SAP004-md-links#readme",
   "license": "ISC",
+  "dependencies": {
+    "axios": "^0.19.2"
+  },
   "devDependencies": {
     "eslint": "^7.4.0",
     "jest": "^26.1.0"
