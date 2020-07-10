@@ -9,8 +9,7 @@ const mdLinks = function (Inputedpath, options) {
 
     readFile(file)
       .then(text => {
-        const regex = /(\[[^\s].*?\])(\(https?:+[^\s]+[\w/])\)/gm;
-        const linkList = extractMdLinks(text, regex, '](');
+        const linkList = extractMdLinks(text, /(\[[^\s].*?\])(\(https?:+[^\s]+[\w/])\)/gm, '](');
         linkList.forEach(link => link.file = file);
 
         if (options === '--validate') {
