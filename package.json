@@ -1,10 +1,9 @@
 {
-  "name": "nmonalisa-md-links",
+  "name": "md-links",
   "version": "0.1.0",
   "description": "Pacote para validar links em arquivos markdown",
   "main": "index.js",
   "scripts": {
-    "start": "node cli.js",
     "test": "jest --coverage",
     "eslint": "eslint cli.js ./lib --ext .js"
   },
