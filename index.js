@@ -8,17 +8,31 @@ const mdLinks = function (Inputedpath, options) {
   return new Promise((resolve) => {
     const file = getFileRoute(Inputedpath);
     const text = readFile(file);
-    const linkList = extractMdLinks(text, utils.regex, '](');
-    linkList.forEach(link => link.file = file);
+    const links = extractMdLinks(text, utils.regex);
+    let completeLinks = []
+    if (links !== []) {
+      const splitedLinks = links.map(link => link.split(']('))
+      splitedLinks.forEach(item => {
+        completeLinks.push({
+          text: item[0].slice(1).substr(0, 50),
+          href: item[1].slice(0, -1),
+          file
+        })
+      })
 
-    if (options === '--validate') {
-      validateLink(linkList)
-        .then(result => resolve(result))
-        .catch((error) => console.log(error.toJSON()))
+      // if (options === '--validate') {
+      //   validateLink(completeLinks)
+      //     .then(result => resolve(result))
+      //     .catch((error) => console.log(error.toJSON()))
+      // } else {
+      //   resolve(completeLinks);
+      // }
     } else {
-      resolve(linkList);
+      resolve(links)
     }
+    resolve(completeLinks)
   });
 };
-
 module.exports = mdLinks;
+
+//testes

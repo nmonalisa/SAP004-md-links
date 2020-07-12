@@ -6,11 +6,20 @@ describe('mdLinks', () => {
     expect(typeof mdLinks).toBe('function')
   })
 
-  it('returns a list of links with three keys (href and name) from a file.md', () => {
-    expect(mdLinks('./lib/test/testFile.md')).toEqual([{
-      href: 'https: //nodejs.org/pt-br/',
-      text: 'Node.js',
-      file: '/home/monalinda/MEGA/DevWeb/bootcamps/Laboratoria/Projetos/Projeto4_MdLinks/SAP004-md-links/test/testFile.md'
-    }])
+  it('return a error if there is no argument', () => {
+    expect(mdLinks()).rejects.toThrow(TypeError)
   });
+
+  it('return a specific message if there is no link in the file', () => {
+    const textWithoutLinks = 'texto sem links'
+    expect(mdLinks(textWithoutLinks)).rejects.toEqual([])
+  })
+
+  it('return a list of links with keys text, href and file if argument validate is empty', () => {
+    expect(mdLinks('./testFile.md')).resolves.toEqual({
+      text: 'Node.js',
+      href: 'https: //nodejs.org/pt-br/',
+      file: './testFile.md'
+    })
+  })
 });
