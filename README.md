@@ -85,5 +85,5 @@ __Descrição dos argumentos do módulo principal__:
 * Implementar suporte para diretórios
 
 ## 7. Autoria:
-Desenvolvido por Nathalia Monalisa durante o bootcamp de Programação Front-End da Laboratória.
+Desenvolvido por Nathalia Monalisa durante o bootcamp de Programação Front-End da Laboratória.<br>
 Contato: nathaliamonalisa@gmail.com
