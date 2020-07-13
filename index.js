@@ -19,20 +19,16 @@ const mdLinks = function (Inputedpath, options) {
           file
         })
       })
-
-      // if (options === '--validate') {
-      //   validateLink(completeLinks)
-      //     .then(result => resolve(result))
-      //     .catch((error) => console.log(error.toJSON()))
-      // } else {
-      //   resolve(completeLinks);
-      // }
     } else {
       resolve(links)
     }
-    resolve(completeLinks)
+    if (options === '--validate') {
+      validateLink(completeLinks)
+        .then(result => resolve(result))
+        .catch((error) => console.log(error.toJSON()))
+    } else {
+      resolve(completeLinks);
+    }
   });
 };
 module.exports = mdLinks;
-
-//testes
