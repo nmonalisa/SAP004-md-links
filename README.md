@@ -57,7 +57,7 @@ mdLinks(path, options)
 
 __Descrição dos argumentos do módulo principal__:
 * `path`: rota absoluta ou relativa do arquivo. 
-* `--validate`: string que determina se deseja validar no servidor os links encontrados.
+* `--validate`: string que determina se deseja validar os links encontrados no servidor.
 
 
 
@@ -65,26 +65,25 @@ __Descrição dos argumentos do módulo principal__:
 
 * `README.md` documentação do módulo com instruções de instalação e uso.
 * `index.js`: módulo principal que exporta a função `mdLinks`.
-* `cli.js`: script executável.Importa , executa com os inputs do usuário e devolve o resultado do console.
+* `cli.js`: script executável que importa a função `mdLinks` e executa com os inputs do usuário, devolvendo o resultado no console.
 * `lib/file-reader.js`: módulo que retorna o texto de um arquivo recebido através de um caminho relativo ou absoluto.
-* `lib/link-catcher.js`: módulo que recebe o conteúdo de arquivo e retorna os links de acordo com um padrão de busca (expressão regular)
+* `lib/link-catcher.js`: módulo que recebe o conteúdo do arquivo e retorna os links de acordo com um padrão de busca (expressão regular)
 * `lib/setter-file-route.js`: módulo que resolve o caminho do arquivo passado.
 * `lib/validator.js`: módulo que valida a url no servidor a inclui a propriedade 'status' ao objeto que representa o link.
-* `package.json` deve possuir o nome, versão, descrição, autor, licença,
-  dependências e scripts.
-* `utils` contém informações gerais úteis para o desenvolvimento, como mensagens de erro e a expressão regular usada para encontrar links nos arquivos.md.
-* `.editorconfig` com a configuração para o editor de texto. Este arquivo não
-  deve ser alterado.
-* `.eslintrc` com a configuração para o linter. Este arquivo não deve ser
-  alterado.
-* `.gitignore` para ignorar o `node_modules` e outras pastas que não devem
-  ser incluídas no controle de versão (`git`).
-* `test/md-links.spec.js` testes unitários para a função
-  `mdLinks()`. A sua implementação deve rodar estes testes.
+* `package.json` informações gerais, dependências e scripts do projeto.
+* `utils` informações gerais úteis para o desenvolvimento, como mensagens de erro e a expressão regular usada para encontrar links nos arquivos.md.
+* `.editorconfig` configuração para o editor de texto.
+* `.eslintrc` com a configuração para o linter.
+* `.gitignore` para ignorar o `node_modules` e outras pastas que não devem ser incluídas no controle de versão (`git`).
+* `test/md-links.spec.js` testes unitários para a função `mdLinks()`.
   
 
 
 ## 6. Próximos Passos
-* Aperfeiçoar os testes utilizados para obter > 70% de cobertura
-* Implementar o argumento opcional stats, com algumas estatísticas do arquivo
+* Aperfeiçoar os testes utilizados para obter mínimo de 70% de cobertura
+* Implementar o argumento opcional `stats`, com algumas estatísticas do arquivo e dos links
 * Implementar suporte para diretórios
+
+## 7. Autoria:
+Desenvolvido por Nathalia Monalisa durante o bootcamp de Programação Front-End da Laboratória.
+Contato: nathaliamonalisa@gmail.com
