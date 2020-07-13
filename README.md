@@ -3,33 +3,34 @@
 ## 1. Resumo do projeto
 
 [Markdown](https://pt.wikipedia.org/wiki/Markdown) é uma linguagem de marcação
-muito popular entre os programadores. É usada em muitas plataformas que
-manipulam texto (GitHub, fórum, blogs e etc). É muito comum encontrar arquivos
+muito popular entre os programadores e usada em diversas plataformas que
+manipulam texto (GitHub, fórum, blogs e etc). Apesar de ser muito comum encontrar arquivos
 com este formato em qualquer repositório (começando pelo tradicional
-`README.md`). Porém, os arquivos `Markdown` ocasionalmente contém _links_ que podem estar
+`README.md`), arquivos `Markdown` ocasionalmente contém _links_ que podem estar
 quebrados, ou que já não são válidos, prejudicando muito o valor da
 informação que está ali.
 
-A proposta deste projeto foi criar um pacote que lê arquivos no formato _markdown_, extrai e valida os links que estão nele.
-A  biblioteca e script executável do projeto (ferramenta de linha de comando - CLI) foram desenvolvidas em Javascript usando ambiente de desenvolvimento [Node.js](https://nodejs.org/pt-br/).
+A proposta deste projeto foi criar uma biblioteca que lê, extrai e valida links que estão em um arquivo markdown. A  biblioteca e script executável do projeto foram desenvolvidas em Javascript usando ambiente de desenvolvimento [Node.js](https://nodejs.org/pt-br/).
 
 
 ## 2.Funcionalidades
 
-O comportamento padrão da biblioteca identifica o arquivo Markdown (a partir da rota que recebeu como
-argumento), analisa o arquivo Markdown e imprime os links encontrados. A função principal (mdLinks) retorna uma promessa (`Promise`) que resolve um array  de objetos, onde cada objeto representa um link, contendo as seguintes
+O comportamento padrão da biblioteca é identificar o arquivo a partir da rota recebida como argumento, analisar o arquivo e imprimir no console os links encontrados. A função principal (mdLinks) retorna uma promessa (`Promise`) que resolve um array  de objetos, onde cada objeto representa um link com as seguintes
 propriedades:
 
 * `href`: URL encontrada.
-* `text`: Texto que irá aparecer dentro de um link (`<a>`).
+* `text`: Texto que descreve o link (truncado em 50 caracteres).
 * `file`: Rota absoluta do arquivo onde foi encontrado o link.
 
-O argumento opcional '--validate' acrescenta uma propriedade a cada link contendo informações da validação da url no servidor: 
-* status code e status.message
+O argumento opcional '--validate' acrescenta uma propriedade aos links com as seguintes informações de validação do servidor: 
+* código do status
+* mensagem do status
 
-## 3.Instalação
 
-Para fazer a instalação a bliblioteca digite no terminal da sua máquina:
+
+## 3.Instalação da biblioteca
+
+No terminal da sua máquina use o comando:
 ```
 $ npm install nmonalisa/SAP004-md-links
 ```
@@ -42,21 +43,23 @@ $ npm uninstall nmonalisa/SAP004-md-links
 
 ## 4.Uso
 
-### 4.1.Ferramenta de Linha de Comando (CLI)
-Para usar a biblioteca de qualquer local da sua máquina após a instalação, use o comando:
+#### 4.1.Ferramenta de Linha de Comando (CLI)
+Para usar a biblioteca de qualquer local da sua máquina, use o comando:
 ```
 md-Links <caminho-do-arquivo> [--validate]
 ```
 
-### 4.2.Interface do módulo principal (API)
+#### 4.2.Interface do módulo principal (API)
 Você também pode usar a biblioteca localmente importando o módulo principal em qualquer outro módulo Node.js através da interface:
 ```
 mdLinks(path, options)
 ```
 
-### 4.3.Argumentos
+__Descrição dos argumentos do módulo principal__:
 * `path`: rota absoluta ou relativa do arquivo. 
 * `--validate`: string que determina se deseja validar no servidor os links encontrados.
+
+
 
 ## 5. Arquivos do projeto
 
@@ -78,6 +81,7 @@ mdLinks(path, options)
   ser incluídas no controle de versão (`git`).
 * `test/md-links.spec.js` testes unitários para a função
   `mdLinks()`. A sua implementação deve rodar estes testes.
+  
 
 
 ## 6. Próximos Passos
