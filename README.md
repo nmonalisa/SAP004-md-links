@@ -62,7 +62,6 @@ __Descrição dos argumentos do módulo principal__:
 
 
 ## 5. Arquivos do projeto
-
 * `README.md` documentação do módulo com instruções de instalação e uso.
 * `index.js`: módulo principal que exporta a função `mdLinks`.
 * `cli.js`: script executável que importa a função `mdLinks` e executa com os inputs do usuário, devolvendo o resultado no console.
@@ -73,7 +72,6 @@ __Descrição dos argumentos do módulo principal__:
 * `.eslintrc` com a configuração para o linter.
 * `.gitignore` para ignorar o `node_modules` e outras pastas que não devem ser incluídas no controle de versão (`git`).
 * `test/md-links.spec.js` testes unitários para a função `mdLinks()`.
-* `test/testFile.md` testes unitários para a função `mdLinks()`.
   
 
 
@@ -81,6 +79,7 @@ __Descrição dos argumentos do módulo principal__:
 * Aperfeiçoar os testes utilizados para obter mínimo de 70% de cobertura
 * Implementar o argumento opcional `stats`, com algumas estatísticas do arquivo e dos links
 * Implementar suporte para diretórios
+
 
 ## 7. Autoria
 Desenvolvido por Nathalia Monalisa durante o bootcamp de Programação Front-End da Laboratória.<br>
