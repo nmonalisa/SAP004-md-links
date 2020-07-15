@@ -27,7 +27,8 @@
   "homepage": "https://github.com/nmonalisa/SAP004-md-links#readme",
   "license": "ISC",
   "dependencies": {
-    "axios": "^0.19.2"
+    "axios": "^0.19.2",
+    "chalk": "^4.1.0"
   },
   "devDependencies": {
     "eslint": "^7.4.0",

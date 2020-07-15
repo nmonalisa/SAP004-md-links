@@ -12,7 +12,7 @@ const showLinks = function (linkList) {
     })
   } else {
     linkList.map(link => {
-      console.log(`Link ${i+=1}: ${link.file} ${chalk.green(link.href)} ${link.text}`)
+      console.log(`Link ${i+=1}: ${link.file} ${chalk.green(link.href)} ${link.text.substr(0, 50)}`)
     })
   }
 };
