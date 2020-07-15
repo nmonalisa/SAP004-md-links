@@ -1,18 +1,20 @@
-const readFile = require('./lib/file-reader');
+const { readFileSync } = require('fs')
 const validateLink = require('./lib/validator');
 const extractMdLinks = require('./lib/link-catcher');
-const getFileRoute = require('./lib/setter-file-route');
-const utils = require('./utils')
 const path = require('path');
 
-getFileRoute = inputedPath => typeof inputedPath === 'string' ? path.resolve(process.cwd(), inputedPath) : false;
+//---- 
+const getFileRoute = inputedPath => typeof inputedPath === 'string' ? path.resolve(process.cwd(), inputedPath) : false;
 
+const readFile = path => readFileSync(path, 'utf-8');
+//----
 
 const mdLinks = function (Inputedpath, options) {
   return new Promise((resolve) => {
     const file = getFileRoute(Inputedpath);
     const text = readFile(file);
-    const links = extractMdLinks(text, utils.regex);
+    const regex = /(\[[^\s].*?\])(\(https?:+[^\s]+[\w/])\)/gm;
+    const links = extractMdLinks(text, regex);
     const completeLinks = []
     if (links !== []) {
       const splitedLinks = links.map(link => link.split(']('))
