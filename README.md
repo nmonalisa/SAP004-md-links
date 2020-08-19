@@ -59,6 +59,7 @@ __Descrição dos argumentos do módulo principal__:
 * `path`: rota absoluta ou relativa do arquivo. 
 * `--validate`: string que determina se deseja validar os links encontrados no servidor.
 
+
 #### 4.3.Resultado final:
 [Terminal:](assets/mdlinks.png)
 
