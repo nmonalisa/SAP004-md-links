@@ -46,7 +46,7 @@ $ npm uninstall nmonalisa/SAP004-md-links
 #### 4.1.Ferramenta de Linha de Comando (CLI)
 Para usar a biblioteca de qualquer local da sua máquina, use o comando:
 ```
-md-Links <caminho-do-arquivo> [--validate]
+md-links <caminho-do-arquivo> [--validate]
 ```
 
 #### 4.2.Interface do módulo principal (API)
