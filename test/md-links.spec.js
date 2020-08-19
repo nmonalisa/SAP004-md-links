@@ -6,6 +6,7 @@ describe('mdLinks', () => {
     expect(typeof mdLinks).toBe('function')
   })
 
+  // trocar para a sintaxe de promisses usando then e done()
   it('return a empty list if there is no link in the file', () => {
     expect(mdLinks('./test/testFile-no-links.md')).resolves.toEqual([])
   })

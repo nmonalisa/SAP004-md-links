@@ -46,7 +46,7 @@ $ npm uninstall nmonalisa/SAP004-md-links
 #### 4.1.Ferramenta de Linha de Comando (CLI)
 Para usar a biblioteca de qualquer local da sua máquina, use o comando:
 ```
-md-Links <caminho-do-arquivo> [--validate]
+md-links <caminho-do-arquivo> [--validate]
 ```
 
 #### 4.2.Interface do módulo principal (API)
@@ -58,6 +58,9 @@ mdLinks(path, options)
 __Descrição dos argumentos do módulo principal__:
 * `path`: rota absoluta ou relativa do arquivo. 
 * `--validate`: string que determina se deseja validar os links encontrados no servidor.
+
+#### 4.3.Resultado final:
+[Terminal:]('./assets/mdlinks.png)
 
 
 
