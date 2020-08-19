@@ -60,7 +60,7 @@ __Descrição dos argumentos do módulo principal__:
 * `--validate`: string que determina se deseja validar os links encontrados no servidor.
 
 #### 4.3.Resultado final:
-[Terminal:]('./assets/mdlinks.png)
+[Terminal:]('./assets/mdlinks.png')
 
 
 
