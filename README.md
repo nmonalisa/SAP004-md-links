@@ -61,7 +61,7 @@ __Descrição dos argumentos do módulo principal__:
 
 
 #### 4.3.Resultado final:
-[Terminal:](assets/mdlinks.png)
+[Terminal](assets/mdlinks.png)
 
 
 
