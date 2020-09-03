@@ -74,7 +74,6 @@ __Descrição dos argumentos do módulo principal__:
 * `package.json` informações gerais, dependências e scripts do projeto.
 * `.editorconfig` configuração para o editor de texto.
 * `.eslintrc` com a configuração para o linter.
-* `.gitignore` para ignorar o `node_modules` e outras pastas que não devem ser incluídas no controle de versão (`git`).
 * `test/md-links.spec.js` testes unitários para a função `mdLinks()`.
   
 
